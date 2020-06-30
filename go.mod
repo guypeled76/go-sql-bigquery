@@ -1,4 +1,4 @@
-module github.com/solcates/go-sql-bigquery
+module github.com/guypeled76/go-sql-bigquery
 
 go 1.13
 

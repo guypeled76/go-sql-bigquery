@@ -6,11 +6,11 @@ import (
 	"fmt"
 	_ "github.com/infobloxopen/protoc-gen-gorm/types"
 
+	_ "github.com/guypeled76/go-sql-bigquery"
+	bigquery "github.com/guypeled76/go-sql-bigquery"
 	"github.com/jinzhu/gorm"
 	uuid "github.com/satori/go.uuid"
 	"github.com/sirupsen/logrus"
-	_ "github.com/solcates/go-sql-bigquery"
-	bigquery "github.com/solcates/go-sql-bigquery"
 	"google.golang.org/api/googleapi"
 	"os"
 	"reflect"

@@ -1,11 +1,11 @@
 package main
 
 import (
+	bigquery "github.com/guypeled76/go-sql-bigquery"
+	_ "github.com/guypeled76/go-sql-bigquery/dialects/bigquery"
 	"github.com/jinzhu/gorm"
 	"github.com/satori/go.uuid"
 	"github.com/sirupsen/logrus"
-	bigquery "github.com/solcates/go-sql-bigquery"
-	_ "github.com/solcates/go-sql-bigquery/dialects/bigquery"
 	"os"
 	"time"
 )
@@ -49,8 +49,6 @@ type Animal struct {
 	Parent     uuid.UUID `gorm:"type:uuid"`
 	Uuid       uuid.UUID `gorm:"type:uuid"`
 }
-
-
 
 //func (a *Animal) TableName() string {
 //	return "animals"

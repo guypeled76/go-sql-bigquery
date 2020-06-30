@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"github.com/DATA-DOG/go-sqlmock"
+	bigquery "github.com/guypeled76/go-sql-bigquery"
 	"github.com/jinzhu/gorm"
 	"github.com/sirupsen/logrus"
-	bigquery "github.com/solcates/go-sql-bigquery"
 	"github.com/stretchr/testify/mock"
 	"testing"
 )
@@ -357,10 +357,10 @@ func TestDialect_HasTable(t *testing.T) {
 			},
 			args: args{
 				tableName: "table1",
-				args: nil,
+				args:      nil,
 			},
 			want: true,
-		},  {
+		}, {
 			name: "OK, dataset.table",
 			fields: fields{
 				db:                     testDialect.db,
@@ -374,7 +374,7 @@ func TestDialect_HasTable(t *testing.T) {
 			},
 			args: args{
 				tableName: "dataset1.table1",
-				args: nil,
+				args:      nil,
 			},
 			want: true,
 		}, {
