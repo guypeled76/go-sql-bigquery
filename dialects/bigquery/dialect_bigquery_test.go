@@ -468,7 +468,7 @@ func TestDialect_LimitAndOffsetSQL(t *testing.T) {
 				db:                     tt.fields.db,
 				DefaultForeignKeyNamer: tt.fields.DefaultForeignKeyNamer,
 			}
-			if got := b.LimitAndOffsetSQL(tt.args.limit, tt.args.offset); got != tt.want {
+			if got, _ := b.LimitAndOffsetSQL(tt.args.limit, tt.args.offset); got != tt.want {
 				t.Errorf("LimitAndOffsetSQL() = %v, want %v", got, tt.want)
 			}
 		})
