@@ -191,7 +191,7 @@ func (b Dialect) ModifyColumn(tableName string, columnName string, typ string) e
 	panic("implement me")
 }
 
-func (b Dialect) LimitAndOffsetSQL(limit, offset interface{}) (sql string) {
+func (b Dialect) LimitAndOffsetSQL(limit, offset interface{}) (sql string, err error) {
 	if limit != nil {
 		if parsedLimit, err := strconv.ParseInt(fmt.Sprint(limit), 0, 0); err == nil && parsedLimit >= 0 {
 			sql += fmt.Sprintf(" LIMIT %d", parsedLimit)
@@ -210,6 +210,10 @@ func (b Dialect) SelectFromDummyTable() string {
 }
 
 func (b Dialect) LastInsertIDReturningSuffix(tableName, columnName string) string {
+	return ""
+}
+
+func (b Dialect) LastInsertIDOutputInterstitial(tableName, columnName string, columns []string) string {
 	return ""
 }
 
